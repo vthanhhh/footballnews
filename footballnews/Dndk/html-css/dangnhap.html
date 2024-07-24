@@ -1,0 +1,162 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ccc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .form-container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width: 300px;
+            text-align: center;
+        }
+
+            .form-container h1 {
+                margin-bottom: 20px;
+                color: #333;
+            }
+
+        .social-login {
+            margin: 20px 0;
+        }
+
+            .social-login p {
+                display: flex;
+                align-items: center;
+                padding: 10px;
+                border-radius: 5px;
+                cursor: pointer;
+                margin: 10px 0;
+            }
+
+            .social-login img {
+                width: 50px;
+                height: 50px;
+                margin-right: 10px;
+                fill: currentColor;
+            }
+
+        .fb-login {
+            background-color: #3b5998; /* Màu Facebook */
+            color: white;
+            border: 2px solid #3b5998;
+        }
+        /*.fb-login:hover {
+            background-color: white;
+            color: #3b5998;*/
+        }
+
+        .gg-login {
+            background-color: #efedd9; /* Màu Google */
+            color: black;
+            border: 2px solid #db4437;
+        }
+
+            .gg-login:hover {
+                background-color: lightgray;
+            }
+
+        .apple-login {
+            background-color: #000; /* Màu Apple */
+            color: white;
+            border: 2px solid #000;
+        }
+        /*.apple-login:hover {
+            background-color: lightgrey;
+            color: #000;*/
+        }
+
+        .divider {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+            .divider hr {
+                flex: 1;
+                border: 0;
+                height: 1px;
+                background: #ccc;
+            }
+
+            .divider span {
+                padding: 0 10px;
+                color: #666;
+            }
+
+        input[type="text"], input[type="password"] {
+            width: 85%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="submit"] {
+            width: 85%;
+            padding: 10px;
+            background: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px 0;
+        }
+
+            input[type="submit"]:hover {
+                background: #0056b3;
+            }
+
+        a {
+            display: block;
+            margin: 10px 0;
+            color: #007bff;
+            text-decoration: none;
+        }
+
+            a:hover {
+                text-decoration: underline;
+            }
+    </style>
+</head>
+<body>
+    <form id="form1" action="../aspx/dangnhap.aspx" runat="server" method="post">
+        <div class="form-container">
+                <h1>Đăng nhập</h1>
+                <div class="social-login">
+                    <p class="fb-login"><img src="facebook.svg" alt="Facebook" /> Đăng nhập bằng Facebook</p>
+                    <p class="gg-login"><img src="gg_1.svg" alt="Google" /> Đăng nhập bằng Google</p>
+                    <p class="apple-login"><img src="apl_1.svg" alt="Apple" /> Đăng nhập bằng Apple</p>
+                </div>
+                <div class="divider">
+                    <hr>
+                    <span>Hoặc đăng nhập bằng</span>
+                    <hr>
+                </div>
+                <input type="text" name="username" placeholder="Tài khoản" required />
+                <input type="password" name="password" placeholder="Mật khẩu" required />
+                <input type="submit" id="btnSubmit" value="Đăng nhập" />
+                <a href="dangnhap.html">Quên mật khẩu</a>
+                <div class="divider">
+                    <hr>
+                    <span>Bạn là thành viên mới?</span>
+                    <hr>
+                </div>
+                <a href="dangky.html" class="register-btn">Tạo tài khoản</a>
+        </div>
+    </form>
+</body>
+</html>

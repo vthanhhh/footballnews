@@ -1,0 +1,149 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <title></title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ccc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .form-container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width: 300px;
+            text-align: center;
+        }
+
+            .form-container h1 {
+                margin-bottom: 20px;
+                color: #333;
+            }
+
+            .form-container p {
+                color: #666;
+                margin-bottom: 20px;
+            }
+
+        input[type="text"], input[type="password"], input[type="date"] {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .gender-options {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+        }
+
+            .gender-options label {
+                margin: 0 10px;
+            }
+
+        input[type="radio"] {
+            margin-left: 5px;
+        }
+
+        .dob-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 10px 0;
+        }
+
+            .dob-container label {
+                flex: 1;
+                text-align: left;
+            }
+
+            .dob-container input[type="date"] {
+                flex: 2;
+                padding: 10px;
+                margin: 0 10px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+            }
+
+        input[type="submit"] {
+            width: 90%;
+            padding: 10px;
+            background: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 20px 0;
+        }
+
+            input[type="submit"]:hover {
+                background: #0056b3;
+            }
+
+        a {
+            display: block;
+            margin: 10px 0;
+            color: #007bff;
+            text-decoration: none;
+        }
+    </style>
+    <script>
+        function check() {
+            var password = document.getElementById("password").value;
+            var repassword = document.getElementById("repassword").value;
+            var errorMessage = document.getElementById("error-message");
+
+            if (password != repassword) {
+                errorMessage.style.display = "block";
+                errorMessage.innerText = "Mật khẩu không khớp.";
+                password.focus();
+            } else {
+                errorMessage.style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body>
+    <form id="form1" action="../aspx/dangky.aspx" runat="server" method="post" onsubmit="return check()">
+        <div class="form-container">
+            <h1>Trang đăng ký</h1>
+            <p>Nhập thông tin để tạo tài khoản</p>
+            <input type="text" name="name" placeholder="Họ và tên" required />
+            <br />
+
+            <div class="gender-options">
+                <label>Giới tính</label>
+                <input type="radio" name="gioitinh" value="nam" id="nam" required />
+                <label for="nam">Nam</label>
+                <input type="radio" name="gioitinh" value="nu" id="nu" required />
+                <label for="nu">Nữ</label>
+            </div>
+            <div class="dob-container">
+                <label for="ngaysinh">Ngày sinh</label>
+                <input type="date" name="ngaysinh" id="ngaysinh" required />
+            </div>
+            <input type="text" name="username" placeholder="Tài khoản" required />
+            <br />
+            <input type="password" name="password" id="password" placeholder="Mật khẩu" required />
+            <br />
+            <input type="password" name="repassword" id="repassword" placeholder="Nhập lại mật khẩu" required />
+            <br />
+            <div id="error-message" style="color: red; display: none;">Mật khẩu không khớp.</div>
+            <input type="submit" id="btnSubmit" value="Đăng ký" />
+            <br />
+            <a href="dangnhap.html">Đã có tài khoản? Đăng nhập ngay</a>
+        </div>
+    </form>
+</body>
+</html>

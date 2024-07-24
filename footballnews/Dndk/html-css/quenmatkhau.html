@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ccc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .form-container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width: 350px;
+            text-align: center;
+        }
+
+            .form-container h1 {
+                margin-bottom: 20px;
+                color: #333;
+            }
+
+            .form-container p {
+                color: #666;
+                margin-bottom: 20px;
+            }
+
+        input[type="text"], input[type="password"] {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="submit"] {
+            width: 90%;
+            padding: 10px;
+            background: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 20px 0;
+        }
+
+            input[type="submit"]:hover {
+                background: #0056b3;
+            }
+
+        .back-link {
+            margin-top: 20px;
+        }
+
+            .back-link a {
+                color: #007bff;
+                text-decoration: none;
+            }
+
+                .back-link a:hover {
+                    text-decoration: underline;
+                }
+    </style>
+    <script>
+        function check()
+        {
+            var password = document.getElementById("newpassword").value;
+            var repassword = document.getElementById("repassword").value;
+            var errorMessage = document.getElementById("error-message");
+            if (password != repassword) {
+                errorMessage.style.display = "block";
+                errorMessage.innerText = "Mật khẩu không khớp.";
+                document.getElementById("newpassword").focus();
+            } else {
+                errorMessage.style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body>
+    <form id="form1" action="../aspx/quenmatkhau.aspx" runat="server" method="post" onsubmit="return check()">
+        <div class="form-container">
+            <h1>Trang quên mật khẩu</h1>
+            <p>Nhập tên tài khoản của bạn để lấy lại mật khẩu</p>
+            <input type="text" name="username" placeholder="Tài khoản" required />
+            <input type="password" name="newpassword" placeholder="Nhập mật khẩu mới" required />
+            <input type="password" name="repassword" placeholder="Nhập lại mật khẩu mới" required />
+            <div id="error-message" style="color: red; display: none;">Mật khẩu không khớp.</div>
+            <input type="submit" id="btnSubmit" value="Đặt lại mật khẩu" />
+            <div class="back-link">
+                <a href="dangnhap.html">Quay lại trang đăng nhập</a>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
