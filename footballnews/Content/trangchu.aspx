@@ -47,21 +47,24 @@
             </li>
         </ul>
     </div>
-    <div class="content">
-       <div class="news-wrapper">
-        <h4>Tin tuc</h4>
-             <div class="row-news" id="news" runat="server"></div>
-             <h4>Giai dau</h4>
-             <div class="row-news" id="league" runat="server"></div>
-             <h4>Lich thi dau</h4>
-             <div class="row-news" id="schedule" runat="server"></div>
-             <h4>Video</h4>
-             <div class="row-news" id="highlight" runat="server"></div>
-        </div>
-        <div class="advertisement">
-           <img src="https://m.media-amazon.com/images/I/81noQg1m14L._SY466_.jpg" alt="Alternate Text" />
-        </div>
-    </div>
+    </form>
+    <main>
+        <div class="content padding-inline-l">
+               <div class="news-wrapper">
+                   <h1>Tin tức</h1>
+                     <div class="row-news" id="news" runat="server"></div>
+                     <h1>Giải đấu</h1>
+                     <div class="row-news" id="league" runat="server"></div>
+                     <h1>Lịch thi đấu</h1>
+                     <div class="row-news" id="schedule" runat="server"></div>
+                     <h1>Highlight</h1>
+                     <div class="row-news" id="highlight" runat="server"></div>
+                </div>
+                <div class="advertisement">
+                   <img src="https://m.media-amazon.com/images/I/81noQg1m14L._SY466_.jpg" alt="Alternate Text" />
+                </div>
+            </div>
+    </main>
     <footer class="footer">
         <div class="gt">
             <a href="home.aspx">3Ball.com</a>
@@ -79,6 +82,5 @@
             <p>image</p>
         </div>
     </footer>
-    </form>
 </body>
 </html>
