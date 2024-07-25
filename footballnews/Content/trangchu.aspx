@@ -50,6 +50,9 @@
     </form>
     <main>
         <div class="content padding-inline-l">
+                <div class="advertisement">
+                           <img src="https://m.media-amazon.com/images/I/81noQg1m14L._SY466_.jpg" alt="Alternate Text" />
+                        </div>
                <div class="news-wrapper">
                    <h1>Tin tức</h1>
                      <div class="row-news" id="news" runat="server"></div>
